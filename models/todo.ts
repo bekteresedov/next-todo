@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { Schema, Document } from 'mongoose';
 
 export interface Todo extends Document {
-    message: string;
+    message: String;
 }
 
 const todoSchema: Schema<Todo> = new mongoose.Schema({
@@ -12,4 +12,4 @@ const todoSchema: Schema<Todo> = new mongoose.Schema({
     }
 })
 
-export default mongoose.models.Todo || mongoose.model<String>('Todo', todoSchema);
+export default mongoose.models.Todo || mongoose.model<Todo>('Todo', todoSchema);
